@@ -43,10 +43,10 @@ function Navbar() {
         <a href="/course">Course</a>
       </li>
       <li>
-        <a>Contact</a>
+        <a href="/contact">Contact</a>
       </li>
       <li>
-        <a>About</a>
+        <a href="/about">About</a>
       </li>
     </>
   );
@@ -95,27 +95,26 @@ function Navbar() {
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">{navItems}</ul>
             </div>
-            <div className="hidden md:block">
-              <label className="px-3 py-2 border rounded-md flex items-center gap-2">
-                <input
-                  type="text"
-                  className="grow outline-none dark:bg-slate-900 dark:text-white"
-                  placeholder="Search"
+            <div className="relative flex items-center gap-2 hidden md:block">
+              <input
+                type="text"
+                className="input input-bordered outline-none w-24 md:w-auto md:h-8 pl-8 dark:bg-slate-900 dark:text-white"
+                placeholder="Search"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                className="h-4 w-4 opacity-70 absolute left-2 top-1/2 transform -translate-y-1/2"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                  clipRule="evenodd"
                 />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="h-4 w-4 opacity-70"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </label>
+              </svg>
             </div>
+
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
               <input
