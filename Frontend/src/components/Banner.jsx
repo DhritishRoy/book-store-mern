@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../public/Banner.jpg";
+import banner from "../../public/Banner.png";
 
 function Banner() {
   return (
@@ -31,12 +31,12 @@ function Banner() {
           </div>
           <button className="btn mt-6 mb-6 btn-secondary">Secondary</button>
         </div>
-        <div className="order-1 w-full md:w-1/2">
+        <div className=" order-1 w-full mt-20 md:w-1/2">
           <img
             src={banner}
             className="md:w-[550px] md:h-[460px] md:ml-12"
             alt="Banner Image"
-          ></img>
+          />
         </div>
       </div>
     </>
