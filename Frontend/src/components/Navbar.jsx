@@ -89,13 +89,13 @@ function Navbar() {
                 {navItems}
               </ul>
             </div>
-            <a className="text-2xl font-bold cursor-pointer">BookStore</a>
+            <a className="text-2xl font-bold cursor-pointer">BookNook</a>
           </div>
           <div className="navbar-end space-x-3">
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">{navItems}</ul>
             </div>
-            <div className="relative flex items-center gap-2 hidden md:block">
+            <div className="relative items-center gap-2 hidden md:block">
               <input
                 type="text"
                 className="input input-bordered outline-none w-24 md:w-auto md:h-8 pl-8 dark:bg-slate-900 dark:text-white"
