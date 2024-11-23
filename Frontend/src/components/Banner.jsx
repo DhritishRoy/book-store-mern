@@ -8,15 +8,16 @@ function Banner() {
         <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-36">
           <div className="space-y-12">
             <h1 className="text-2xl md:text-4xl font-bold">
-              Hello, welcomes here to learn something{" "}
-              <span className="text-pink-500">new everyday!!!</span>
+              Your Ultimate Digital Library: Discover, Browse, and Shop Books
+              with Ease <span className="text-pink-500">new everyday!!!</span>
             </h1>
             <p className="text-sm md:text-xl">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              et totam. Tempora amet atque expedita, quae corrupti totam sed
-              pariatur corporis at veniam est voluptas animi!
+              A Seamless Experience for Book Lovers, Anytime, Anywhere.
+              Personalized Recommendations and Exclusive Deals at Your
+              Fingertips. Transform Your Reading Journey with Convenient
+              E-Reading
             </p>
-            <label className="input input-bordered flex items-center gap-2">
+            <label className="input input-bordered flex items-center gap-2  dark:bg-slate-800 dark:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
@@ -29,7 +30,7 @@ function Banner() {
               <input type="text" className="grow" placeholder="Email" />
             </label>
           </div>
-          <button className="btn mt-6 mb-6 btn-secondary">Secondary</button>
+          <button className="btn mt-6 mb-6 btn-secondary">Get Started</button>
         </div>
         <div className=" order-1 w-full mt-20 md:w-1/2">
           <img
