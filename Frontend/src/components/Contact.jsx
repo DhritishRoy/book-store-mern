@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Contact() {
   const {
@@ -10,7 +12,34 @@ function Contact() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      message: data.message,
+    };
+    await axios
+      .post("http://localhost:4001/contact/contactus", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success("Feedback Request Successful");
+          document.getElementById("my_modal_3").close();
+          setTimeout(() => {
+            window.location.reload();
+            localStorage.setItem("Users", JSON.stringify(res.data.user));
+          }, 1000);
+        }
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err);
+          toast.error("Error: " + err.response.data.message);
+          setTimeout(() => {}, 2000);
+        }
+      });
+  };
   return (
     <>
       <Navbar />
@@ -19,10 +48,12 @@ function Contact() {
           <div className="modal-box  dark:bg-slate-800 dark:text-white hover:scale-105 duration-200">
             <form onSubmit={handleSubmit(onSubmit)} method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <Link to="/">
-                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                  ✕
-                </button>
+              <Link
+                to="/"
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                onClick={() => document.getElementById("my_modal_3").close()}
+              >
+                ✕
               </Link>
               <h2 className="font-bold text-lg">Contact Us</h2>
               {/* Name */}
@@ -33,10 +64,10 @@ function Contact() {
                   type="text"
                   placeholder="Enter your name"
                   className="w-80 px-3 py-1 border rounded-md outline-none  dark:bg-slate-800 dark:text-white"
-                  {...register("name", { required: true })}
+                  {...register("fullname", { required: true })}
                 />
                 <br />
-                {errors.name && (
+                {errors.fullname && (
                   <span className="text-sm text-red-500">
                     This field is required
                   </span>
