@@ -30,7 +30,12 @@ function Banner() {
               <input type="text" className="grow" placeholder="Email" />
             </label>
           </div>
-          <button className="btn mt-6 mb-6 btn-secondary">Get Started</button>
+          <button
+            className="btn mt-6 mb-6 btn-secondary"
+            onClick={() => document.getElementById("my_modal_3").showModal()}
+          >
+            Get Started
+          </button>
         </div>
         <div className=" order-1 w-full mt-20 md:w-1/2">
           <img
